@@ -30,7 +30,7 @@ $( document ).ready(function() {
 
     function displayGifs(){
         var action = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=dc6zaTOxFJmzC&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=dc6zaTOxFJmzC&limit=10";
         console.log(queryURL); 
         $.ajax({
             url: queryURL,
@@ -52,9 +52,9 @@ $( document ).ready(function() {
                 gifDiv.append(gifRating);
         
                 var gifImage = $("<img>");
-                gifImage.attr("src", results[i].images.fixed_height_small_still.url); // still image stored into src of image
-                gifImage.attr("data-still",results[i].images.fixed_height_small_still.url); // still image
-                gifImage.attr("data-animate",results[i].images.fixed_height_small.url); // animated image
+                gifImage.attr("src", results[i].images.fixed_height_small_still.url); 
+                gifImage.attr("data-still",results[i].images.fixed_height_small_still.url);
+                gifImage.attr("data-animate",results[i].images.fixed_height_small.url);
                 gifImage.attr("data-state", "still"); 
                 gifImage.addClass("image");
                 gifDiv.append(gifImage);
